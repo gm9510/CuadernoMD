@@ -1,0 +1,16 @@
+{
+    "name": "gustavo/blog",
+    "description": "Un blog basado en markdown",
+    "type": "project",
+    "require": {
+        "erusev/parsedown": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Quijote",
+            "email": "gm9510@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
