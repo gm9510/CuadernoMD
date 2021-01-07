@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="gridcont">
-  <div class="itemTitle">
+  <div class="itemTitle" id="topTitle">
     <h1>Cuaderno</h1>
   </div>
   <div class="itemExplore">
@@ -19,13 +19,17 @@
         <button type="button" onclick="pageReq('php',1)">Platzi introducción a PHP</button>
         <button type="button" onclick="pageReq('php',2)">Manejos de datos en PHP</button>
         <button type="button" onclick="pageReq('php',3)">POO en PHP</button>
+        <button type="button" onclick="pageReq('php',4)">Introducción a frameworks</button>
+        <button type="button" onclick="pageReq('SQL',1)">PostgreSQL</button>
     </div>
   </div>
   <div class="itemViewer" id="display">
     <h1> Bienvenido </h1>
   </div>
 </div>
-
+<div id="goTop">
+  <a href="#topTitle">Go to top</a>
+</div>
 </body>
          <script src="Request.js"></script>
 </html>

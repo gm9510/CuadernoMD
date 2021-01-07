@@ -1,13 +1,31 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,500;1,400&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&display=swap');
+#goTop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 3rem;
+  width: auto;
+  padding: 0 10px;
+  background-color: #4d004d;
+  border-radius: 25px;
+}
 
+#goTop a{
+  color: white;
+  margin: 0;
+  text-decoration: none;
+}
 .gridcont{
   font-family: 'Bitter', serif;
   font-weight: 500;
   display: grid;
-  grid-template-columns: [l] 1fr [lc] 1fr 1fr 1fr [rc] 1fr [r];
-  grid-template-rows: [t] 100px [tc] 1fr [bc] 1fr [b];
+  grid-template-columns: [l] auto [lc] 1fr 1fr 1fr [rc] 1fr [r];
+  grid-template-rows: [t] auto [tc] 1fr [bc] 1fr [b];
 }
 
 .itemTitle{
@@ -20,14 +38,15 @@
 }
 
 .itemExplore{
-  grid-row-start: tc;
-  grid-row-end: b;
-  background-color: #990099;
-  color: white;
-  padding: 10px;
+    grid-row-start: tc;
+    grid-row-end: b;
+    background-color: #990099;
+    color: white;
+    padding: 10px;
 }
 
 .Buttons{
+    height: fill;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -47,13 +66,18 @@
     background-color: #cc00cc;
 }
 
+.Buttons button:last-child {
+    margin-top: auto;
+}
+
 .itemViewer{
-  grid-column: lc / r;
-  grid-row: t / b;
-  padding-left: 30px;
-  padding-top: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+    grid-column: lc / r;
+    grid-row: t / b;
+    padding-left: 30px;
+    padding-top: 10px;
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 .itemViewer h1, .itemViewer h2, .itemViewer h3{
