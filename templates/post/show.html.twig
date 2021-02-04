@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col d-flex">
+            <h5><span class="badge bg-secondary">Title</span> {{ post.title }} </h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex">
+            <h5><span class="badge bg-secondary">Id</span> {{ post.id }} </h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+    {% apply markdown_to_html %}
+        {{ post.content }}
+    {% endapply %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
