@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Parsedown;
 use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
@@ -49,6 +50,28 @@ class PostController extends AbstractController
     }
 
     /**
+     * @Route("/page", name="post_page", methods={"GET"})
+     */
+    public function page(Request $request, PostRepository $postRepository)  
+    {
+
+        $parsedown = new Parsedown();
+        $post_id = $request->query->get('id');
+        $post = $postRepository->find($post_id);
+
+        $md_content = $post->getContent();
+        $html_content = $parsedown->text($md_content);
+
+        $response = new Response(
+            $html_content,
+            Response::HTTP_OK,
+            ['content-type' => 'text/plain']
+        ); 
+
+        return $response;
+    }
+
+    /**
      * @Route("/{id}", name="post_show", methods={"GET"})
      */
     public function show(Post $post ): Response
@@ -91,4 +114,5 @@ class PostController extends AbstractController
 
         return $this->redirectToRoute('post_index');
     }
+
 }
