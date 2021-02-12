@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="container">
+   <div class="row">
+       <div class="col-3 bg-dark m-0 py-3 px-1 justify-content-center text-center">
+           <div class="btn-group-vertical">
+            {% for post in posts %}
+               <button type="button" class="btn btn-outline-light" onclick="request_page({{ post.id}})">{{ post.title }}</button>
+            {% else %}
+               <button type="button" class="btn btn-outline-light" >No post avaible</button>
+            {% endfor %}
+           </div>
+       </div>
+       <div id="display" class="col-9">
+           <h1>Bienvenido</h1>
+       </div>
+   </div>
+</div>
+{% endblock %}
